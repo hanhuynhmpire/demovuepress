@@ -135,6 +135,27 @@
         },
 
         mounted() {
+            const parsed = JSON.stringify(this.sidebarItems);
+            localStorage.setItem('sidebar', parsed);
+            this.$router.afterEach(() => {
+                this.isSidebarOpen = false
+            });
+
+            if ((this.level === 2 || this.level === 3) && this.haveBreadcrumb === true) {
+                this.dirList.push({
+                    name: "Home",
+                    link: "/",
+                });
+                let tempDir = this.$frontmatter.dir;
+                let tempDirList = tempDir.split('/')
+                tempDirList.forEach(dir => {
+                    this.dirList.push({
+                        name: dir.replace(/-/g, ' '),
+                        link: "/" + dir,
+                    });
+                })
+            }
+
             if (this.$pagination) {
                 this.paginationPage = this.$pagination;
             }
@@ -192,29 +213,6 @@
                     },
                     userPageClass
                 ]
-            }
-        },
-
-        mounted() {
-            const parsed = JSON.stringify(this.sidebarItems);
-            localStorage.setItem('sidebar', parsed);
-            this.$router.afterEach(() => {
-                this.isSidebarOpen = false
-            });
-
-            if ((this.level === 2 || this.level === 3) && this.haveBreadcrumb === true) {
-                this.dirList.push({
-                    name: "Home",
-                    link: "/",
-                });
-                let tempDir = this.$frontmatter.dir;
-                let tempDirList = tempDir.split('/')
-                tempDirList.forEach(dir => {
-                    this.dirList.push({
-                        name: dir.replace(/-/g, ' '),
-                        link: "/" + dir,
-                    });
-                })
             }
         },
 
