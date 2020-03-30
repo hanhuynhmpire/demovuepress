@@ -18,7 +18,7 @@
                 </div>
                 <div class="col-sm-12 col-md-8 col-lg-9 content-container">
                     <div class="main-content">
-                        <Breadcrumb v-if="haveBreadcrumb" :dirList="this.dirList"/>
+                        <Breadcrumb v-if="haveBreadcrumb" :dirList="dirList"/>
                         <div v-if="level !== 3">
                             <h1 class="page-title"><span
                                     v-if="$siteTitle"

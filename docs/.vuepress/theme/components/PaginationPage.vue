@@ -65,7 +65,7 @@
             </div>
         </div>
 
-        <!--<Pagination v-if="pagination.length > 1"/>-->
+        <Pagination v-if="pagination.length > 1"/>
     </div>
 </template>
 
@@ -80,7 +80,28 @@
             Pagination,
         },
 
-        props: ['level', 'pagination', 'ads'],
+        props: {
+            test: {
+                type: String,
+                default: 'dsdsd',
+            },
+            level: {
+                type: Number,
+                default: 0,
+            },
+            ads: {
+                type: Array,
+                default: [],
+            },
+            pagination: {
+                type: Object,
+                default: {
+                    length: 0
+                },
+            }
+        },
+
+        // props: ['level', 'pagination', 'ads'],
 
         methods: {
             editLinkRouter(link) {
@@ -106,7 +127,7 @@
             imgLink(index) {
                 let link = '';
                 let num = Math.floor(index / 2);
-                if (this.ads) {
+                if (this.ads.length > 0) {
                     if (this.ads[num]) {
                         link = this.ads[num].fullLink;
                     }
