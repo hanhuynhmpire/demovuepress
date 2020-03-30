@@ -133,12 +133,12 @@
                     })
             }
 
-            this.paginationPage = this.$pagination;
+            // this.paginationPage = this.$pagination;
         },
 
-        updated() {
-            this.paginationPage = this.$pagination;
-        },
+        // updated() {
+        //     this.paginationPage = this.$pagination;
+        // },
 
         computed: {
             shouldShowNavbar() {

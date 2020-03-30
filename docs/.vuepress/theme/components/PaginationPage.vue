@@ -80,32 +80,8 @@
             Pagination,
         },
 
-        props: {
-            test: {
-                type: String,
-                default: 'dsdsd',
-            },
-            level: {
-                type: Number,
-                default: 0,
-            },
-            ads: {
-                type: Array,
-                default: [],
-            },
-            pagination: {
-                type: Array,
-                default: {
-                    length: 0
-                },
-            }
-        },
+        props: ['level', 'pagination', 'ads'],
 
-        mounted() {
-          console.log(this.pagination)
-        },
-
-        // props: ['level', 'pagination', 'ads'],
 
         methods: {
             editLinkRouter(link) {
