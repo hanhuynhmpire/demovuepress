@@ -82,7 +82,6 @@
 
         props: ['level', 'pagination', 'ads'],
 
-
         methods: {
             editLinkRouter(link) {
                 return "/" + link
