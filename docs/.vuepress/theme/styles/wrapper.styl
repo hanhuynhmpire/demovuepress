@@ -1,0 +1,950 @@
+@require './config'
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700&display=swap&subset=vietnamese');
+$wrapper
+  max-width none
+  margin 0
+  padding 0 $adsSidebarWidth 0 0
+  @media (max-width: $MQNarrow)
+    padding 2rem
+  @media (max-width: $MQMobileNarrow)
+    padding 1.5rem
+
+{$contentClass}:not(.custom)
+  max-width none
+  padding 0
+  > *:first-child
+    margin-top 15px
+.level-3 ~ .page
+  {$contentClass}:not(.custom)
+    > *:first-child
+      margin-top 0
+
+{$contentClass}:not(.custom) > h1,
+{$contentClass}:not(.custom) > h2,
+{$contentClass}:not(.custom) > h3,
+{$contentClass}:not(.custom) > h4,
+{$contentClass}:not(.custom) > h5,
+{$contentClass}:not(.custom) > h6
+  padding-top 2.6rem
+
+html, body
+  padding 0
+  margin 0
+  background-color #fff
+
+body
+  font-family "Open Sans", Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+  font-size 16px
+  color $textColor
+
+.theme-container
+  background-color $bgColor
+
+.page
+  padding-left 0
+
+.static-page-content
+  ul
+    padding-left 30px
+
+.navbar
+  position fixed
+  z-index 20
+  top 0
+  left 0
+  right 0
+  height $BnavbarHeight
+  background-color #fff
+  box-sizing border-box
+  border-bottom 1px solid $borderColor
+  .home-link
+    font-size $fsMedium
+    font-weight 900
+    color $colorPrimary
+    &:hover
+      text-decoration none
+
+.ads-img
+  width inherit
+  height inherit
+
+{$contentClass}.custom
+  padding 0
+  margin 0
+
+  img
+    max-width 100%
+
+a
+  font-weight 500
+  color $accentColor
+  text-decoration none
+  &:hover
+    cursor pointer
+
+p a code
+  font-weight 400
+  color $accentColor
+
+kbd
+  background #eee
+  border solid 0.15rem #ddd
+  border-bottom solid 0.25rem #ddd
+  border-radius 0.15rem
+  padding 0 0.15em
+
+blockquote
+  font-size 1rem
+  color #999;
+  border-left .2rem solid #dfe2e5
+  margin 1rem 0
+  padding .25rem 0 .25rem 1rem
+
+  & > p
+    margin 0
+
+ul, ol
+  padding-left 0
+
+strong
+  font-weight 800
+
+h1, h2, h3, h4, h5
+  font-weight 800
+  line-height 1.25
+
+h6
+  font-weight 700
+  line-height 1.25
+
+{$contentClass}:not(.custom) > &
+  margin-top (0.5rem - $navbarHeight)
+  padding-top ($navbarHeight + 1rem)
+  margin-bottom 0
+
+  + p, + pre, + .custom-block
+    margin-bottom 20px
+
+&:hover .header-anchor
+  opacity: 1
+
+h1
+  font-size 2.2rem
+
+h2
+  font-size 1.65rem
+  padding-bottom .3rem
+  border-bottom 1px solid $borderColor
+
+h3
+  font-size 1.35rem
+
+a.header-anchor
+  font-size 0.85em
+  float left
+  margin-left -0.87em
+  padding-right 0.23em
+  margin-top 0.125em
+  opacity 0
+
+  &:hover
+    text-decoration none
+
+code, kbd, .line-number
+  font-family source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace
+
+p, ul, ol
+  line-height 1.7
+
+hr
+  border 0
+  border-top 1px solid $borderColor
+
+table
+  border-collapse collapse
+  margin 1rem 0
+  display: block
+  overflow-x: auto
+
+tr
+  border-top 1px solid #dfe2e5
+
+  &:nth-child(2n)
+    background-color #f6f8fa
+
+th, td
+  border 1px solid #dfe2e5
+  padding .6em 1em
+
+.theme-container
+  &.sidebar-open
+    .sidebar-mask
+      display: block
+
+  &.no-navbar
+    {$contentClass}:not(.custom) > h1, h2, h3, h4, h5, h6
+      margin-top 1.5rem
+      padding-top 0
+
+    .sidebar
+      top 0
+
+::placeholder
+  color: inherit;
+
+:-ms-input-placeholder
+  color: inherit;
+
+::-ms-input-placeholder
+  color: inherit;
+
+::-webkit-scrollbar
+  width: 4px;
+  height: 0px;
+
+::-webkit-scrollbar-track
+  background: #D8E3EB;
+
+::-webkit-scrollbar-thumb
+  background: #B7BBC2;
+
+::-webkit-scrollbar-thumb:hover
+  background: #9599A0;
+
+.content-container
+  display -ms-flexbox
+  display flex
+  -ms-flex-wrap wrap
+  flex-wrap wrap
+
+.main-container
+  padding-top $BnavbarHeight + 30px
+
+.page-title
+  font-size 36px
+  font-weight 900
+  line-height 1
+  &.level-3
+    font-size 28px
+    margin-bottom 20px !important
+    + .item-date
+      margin-top -10px
+      margin-bottom 7px
+
+.theme-default-content:not(.custom) > h1.page-title + p
+  margin-top 20px
+
+body
+  font-size $bodyFontSize
+
+p
+  font-size $bodyFontSize
+  line-height 1.46
+  color $textColorA
+
+.fs-medium
+  font-size $fsMedium
+
+.fw-semibold
+  font-weight 600
+
+.textColorHighlight
+  color $textColorAHighlight
+
+.textColorPrimary
+  color $textColorPrimary
+
+.textColorThird
+  color $textColorThird
+
+.icon.ic_arrow_back
+  width 8px
+  height 8px
+// background-image url("../../public/assets/ic_arrow_back.svg")
+
+.btn
+  border-radius 100px
+  font-weight 600
+  padding-left 30px
+  padding-right 30px
+
+  &.btn-primary
+    background-color $colorPrimary
+    color #fff
+    &:hover
+      background-color $colorSecondary
+      border-color $colorSecondary
+      color #fff
+  &.btn-sm
+    font-size 12px
+    padding 2px 18px
+  &:hover
+    text-decoration none !important
+    color inherit
+
+.page-des
+  color $textColorASecond
+
+.navbar
+  padding 0
+  .links
+    padding-right $adsSidebarWidth
+    width 100%
+  .row
+    width 100%
+    height 100%
+
+.search-box
+  width 100%
+  > input
+    background-color rgba($colorPrimaryRGB, 0.5)
+    border-radius 50px
+    height 32px
+    width 100%
+    color #fff
+
+.sidebar .search-box
+  padding 20px 20px 10px
+  cursor text
+  /*width 10rem*/
+  /*height 2rem*/
+  color #4e6e8e
+  outline none
+  -webkit-transition all 0.2s ease
+  transition all 0.2s ease
+  position absolute
+  background-color #fff
+  top 0
+  > input
+    font-size 13px
+    color #000
+    background-color #F5F5F5
+    border-color transparent
+    &::placeholder
+      color: rgba(0,0,0,.5);
+
+    &:-ms-input-placeholder
+      color: rgba(0,0,0,.5);
+
+    &::-ms-input-placeholder
+      color: rgba(0,0,0,.5);
+
+.sidebar ul.sidebar-links
+  padding-top 0
+  margin-top 20px
+  height 100%
+  height calc(100% - 20px)
+  margin-right 10px
+  overflow-y auto
+
+.sidebar .search-box + ul.sidebar-links
+  margin-top 72px
+  height calc(100% - 72px)
+
+.sidebar-mask
+  position fixed
+  z-index 9
+  top 0
+  left 0
+  width 100vw
+  height 100vh
+  display none
+
+.sidebar
+  font-size 14px
+  font-weight 600
+  color $colorAprimary
+  line-height 1.3
+  background-color #fff
+  z-index 10
+  box-sizing border-box
+  border-radius 6px
+  -webkit-border-radius 6px
+  -ms-border-radius 6px
+  border-right 1px solid $borderColor
+  overflow-y auto
+  width calc(25% - 30px)
+  top $BnavbarHeight + 30px
+  left auto
+  position fixed
+  height 80%
+  height calc(100vh - 110px)
+
+aside.sidebar > .sidebar-links > li > a.sidebar-link,
+aside.sidebar .sidebar-heading
+  line-height 1.3
+  font-size 14px
+  color $colorPrimary
+  text-transform capitalize
+
+.banner-wrap
+  margin-bottom 16px
+
+.banner-link
+  display inline-block
+  cursor pointer
+
+.right-sidebar .banner-link
+  width 300px
+
+.bd-item
+  background-color #fff
+  border-radius 6px
+  padding 0
+  overflow hidden
+  display -ms-flexbox
+  display flex
+  -ms-flex-wrap wrap
+  flex-wrap wrap
+  margin-bottom 16px
+  box-shadow 0 2px 4px rgba(0,0,0,0.05)
+  .pagination
+    margin-top 15px
+    margin-bottom 15px
+
+.bd-label
+  font-size 13px
+  font-weight normal
+  color $labelColor
+  margin-bottom 5px
+
+.item-content
+  padding 30px
+  -ms-flex-preferred-size 0
+  flex-basis 0
+  -ms-flex-positive 1
+  flex-grow 1
+  max-width 100%
+  > p:last-child
+    margin-bottom 0
+  h6 > a:hover
+    text-decoration none !important
+    color $colorPrimary
+.item-title
+  font-size 13px
+  font-weight 700
+  margin-bottom 10px
+  display -ms-flexbox
+  display flex
+  -ms-flex-wrap wrap
+  flex-wrap wrap
+  justify-content space-between
+  text-transform capitalize
+  .item-date
+    min-width 150px
+    font-weight 400
+    text-align right
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+    color #000
+  a
+    color inherit
+    font-weight inherit
+    flex-basis 0
+    -ms-flex-positive 1
+    flex-grow 1
+    max-width 100%
+  + .item-info
+    margin-top 15px
+
+.item-rightblock
+  -ms-flex 0 0 18.6%
+  flex 0 0 18.6%
+  max-width 18.6%
+  background-color rgba($colorPrimaryRGB, 0.05)
+  align-items center
+  justify-content center
+  display -ms-flexbox
+  display flex
+  -ms-flex-wrap wrap
+  flex-wrap wrap
+  flex-direction column
+
+.item-statsnum
+  text-align center
+  line-height 1
+  margin-bottom 10px
+
+.main-content
+  flex-basis 0
+  -ms-flex-positive 1
+  flex-grow 1
+  max-width 100%
+  min-height 100vh
+  min-height calc(100vh - 143px)
+
+.banner-wrap
+  img
+    max-width 100%
+
+.right-sidebar
+  width $adsSidebarWidth
+
+div .pagination
+  width 100%
+  text-align center
+  margin-top 30px
+  position relative
+  display block
+  li
+    margin 0 8px
+    display inline-block
+    &:first-child, &:last-child
+      position absolute
+      a
+        padding 0 15px
+        border-radius 50px
+        border 1px solid $bgColor
+    &:first-child
+      margin-right 40px
+      margin-left 0
+      left 0
+    &:last-child
+      right 0
+    &:first-child a, &:last-child a
+      min-width 85px
+    &.active
+      a
+        background-color $colorPrimary !important
+        color #fff
+    a
+      font-size 11px
+      color #707070
+      background-color #fff
+      border-radius 50px
+      text-transform uppercase
+      padding 0 10px
+      text-align center
+      min-width 28px
+      display block
+      height 28px
+      line-height 28px
+      font-weight 700
+      &:hover
+        text-decoration none !important
+        background-color $colorSecondary
+        color #fff
+
+.footer
+  width 100%
+  display -ms-flexbox
+  display flex
+  -ms-flex-wrap wrap
+  flex-wrap wrap
+  margin-bottom 14px
+.footer-content
+  width 100%
+  display -ms-flexbox
+  display flex
+  -ms-flex-wrap wrap
+  flex-wrap wrap
+.footer-network
+  padding-top 15px
+  border-top 1px dashed $arrowBgColor
+  width 100%
+  > .item-title
+    text-transform uppercase
+    color $textColorPrimary
+    font-size $fsMediumText
+.network-item
+  > h6
+    margin-bottom 5px
+  > p
+    margin-bottom 20px
+
+.copywrite-info
+  color $textColorAHighlight
+  line-height 1.4
+
+.footer-menu
+  text-align right
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+  > ul
+    line-height 1.46
+    margin-bottom 0
+  li
+    display inline-block
+    text-transform uppercase
+    margin-left 30px
+    margin-bottom 15px
+    a
+      color $colorPrimary
+      font-weight 600
+      &:hover
+        text-decoration none !important
+        opacity 0.8
+
+.bizbreadcrumb
+  .breadcrumb
+    background-color #fff
+    border-radius 6px
+    padding 11px 16px
+    margin-bottom 30px
+  .breadcrumb-item + .breadcrumb-item::before
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 6px solid $colorPrimary;
+    content ''
+  .breadcrumb-item
+    opacity 0.5
+    font-weight 600
+    &.active
+      opacity 1
+  .breadcrumb-item a
+    color $colorPrimary
+    font-weight inherit
+.sidebar-button
+  display none
+.sidebar-top-mobile
+  position absolute
+  top 0
+  padding 13px 25px 13px 50px
+  > h6
+    margin-bottom 0
+    text-transform uppercase
+  .sidebar-button
+    left 25px
+    width 20px
+    height 20px
+    svg
+      position absolute
+      top 4px
+
+.level-3
+  ~ .page
+    margin-top 30px
+.stats-download
+  margin-bottom 1rem
+  display -ms-flexbox
+  display flex
+  -ms-flex-wrap wrap
+  flex-wrap wrap
+  > p
+    margin-bottom 0
+    margin-right 15px
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+  .download-btns
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+    display -ms-flexbox
+    display flex
+    -ms-flex-wrap wrap
+    flex-wrap wrap
+    align-items center
+    justify-content space-between
+.detail-title-wrap
+  display -ms-flexbox
+  display flex
+  -ms-flex-wrap wrap
+  flex-wrap wrap
+  margin-bottom 15px
+.detail-logo
+  height auto
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 100%;
+  margin-right 20px
+  margin-top 5px
+  > img
+    max-width 200px
+    max-height 70px
+.detail-title
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  max-width: 100%;
+  font-size $fsDetailTitle
+  font-weight 700
+  color $textColorHighlight
+  .btn
+    margin-top 15px
+
+.item-info
+  display -ms-flexbox
+  display flex
+  -ms-flex-wrap wrap
+  flex-wrap wrap
+  .bd-label
+    flex: 0 0 25%;
+    max-width: 25%;
+    min-width 120px
+  p
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+.bd-status_dot
+  display inline-block
+  width 6px
+  height 6px
+  vertical-align top
+  background-color #aaa
+  border-radius 6px
+  &.live
+    background-color #3DCC14
+
+.text-small
+  font-size 12px
+  font-weight 400
+h4 .text-small
+  font-weight 400
+  margin-left 15px
+.bd-flag
+  width 18px
+  height auto
+  display inline-block
+  vertical-align middle
+  margin-right 5px
+.bd-card-title
+  font-size $bodyFontSize
+  font-weight 600
+.bd-card
+  border-radius 6px
+  border 1px solid #eee
+  padding 20px
+  margin-top 20px
+  margin-bottom 20px
+  > p:last-child
+    margin-bottom 0
+.item-content
+  [class|="col"] .bd-card
+    height calc(100% - 40px)
+
+.sidebar-group
+  position relative
+  .arrow.right
+    position absolute
+    right 10px
+    top 50%
+    transform translateY(-50%)
+    -webkit-transform translateY(-50%)
+    -moz-transform translateY(-50%)
+    -ms-transform translateY(-50%)
+    width 30px
+    height 30px
+    border none
+    cursor pointer
+    &:before
+      content ''
+      position absolute
+      display block
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent
+      border-left: 6px solid $colorPrimary
+      top 50%
+      left 50%
+      transform translate(-50%, -50%)
+      -webkit-transform translate(-50%, -50%)
+      -moz-transform translate(-50%, -50%)
+      -ms-transform translate(-50%, -50%)
+  &.expanded
+    .arrow.right:before
+      border-top: 6px solid $colorPrimary
+      border-bottom none
+      border-left 5px solid transparent
+      border-right 5px solid transparent
+    + ul
+      display block
+a.sidebar-heading
+  padding-top 10px
+  padding-bottom 10px
+  padding-right 35px
+ul.sidebar-links
+  ul
+    padding-left 15px
+    display none
+    &.expanded
+      display block
+.detail-meta
+  display -ms-flexbox
+  display flex
+  -ms-flex-wrap wrap
+  flex-wrap wrap
+  align-items center
+  justify-content space-between
+  margin-bottom 20px
+
+.detail-social
+  text-align right
+  margin-top 10px
+  margin-bottom 10px
+  > a
+    display inline-block
+    min-width 29px
+    min-height 29px
+    padding 0 5px
+    text-align center
+    line-height 27px
+    margin-left 10px
+    border-radius 50px
+    border 1px solid #A6ACB1
+
+.detail-tagslist
+  margin-bottom 30px
+.detail-tagitem
+  color $linkColor
+  display inline-block
+  margin-right 20px
+
+.info-item
+  display -ms-flexbox
+  display flex
+  -ms-flex-wrap wrap
+  flex-wrap wrap
+  > i.fa
+    display -ms-flexbox
+    display flex
+    -ms-flex-wrap wrap
+    flex-wrap wrap
+    font-size 20px
+    min-width 40px
+    padding-right 20px
+  .info-content
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+    > h6
+      margin-bottom 5px
+
+
+// @media (max-width: ($ScreenLG - 1px))
+@media (min-width: ($ScreenSM))
+  .blog-tags
+    width 100% !important
+    display block !important
+  div.blogtags_container
+    margin-right 0
+
+@media (max-width: ($ScreenMD - 1px))
+  .sidebar
+    width calc(33.3333vw - 30px)
+  .right-sidebar
+    display none
+  .footer
+    flex-direction column
+  .copywrite-info
+    order 2
+  .footer-menu
+    text-align left
+    order 1
+    li
+      margin-left 0
+      display block
+
+@media (max-width: ($ScreenSM - 1px))
+  .sidebar
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+    margin-left -15px
+    width 100%
+    overflow hidden
+    border-radius 0
+    height 100vh
+    padding-top $BnavbarHeight*2 - 10px
+    top 0
+    z-index 21
+    .search-box
+      padding-top 10px
+      top $BnavbarHeight - 10px
+  .sidebar .nav-links div.nav-item, .sidebar .nav-links div.repo-link
+    padding-left 10px
+  .theme-container.sidebar-open .sidebar
+    transform translateX(0)
+  .sidebar .search-box + ul.sidebar-links
+    margin-top 15px
+    height calc(100% - 15px)
+  .sidebar-button
+    display block
+    z-index 12
+    left -3px
+    top 50%
+    transform translateY(-50%)
+    padding 0
+  .item-rightblock
+    flex 0 0 26.6%
+    max-width 26.6%
+  .main-container
+    padding-top $BnavbarHeight + 15px
+  .search-box input
+    left 0
+  .theme-container.sidebar-open
+    overflow hidden
+    height 100vh
+  .navbar
+    .logo
+      height auto
+      max-width 100%
+      vertical-align middle
+      margin-left 10px
+    .row
+      width auto
+      width -webkit-fill-available
+    .links
+      padding-right 0
+  .item-content
+    padding-bottom 20px
+
+
+
+@media (max-width: ($ScreenXS))
+  .item-title
+    .item-date
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      width: 100%;
+      text-align left
+      margin-top 10px
+  .stats-download
+    margin-bottom 5px
+    > p
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      width: 100%;
+      margin-bottom 1rem
+    .btn
+      margin-bottom 10px
+  .item-rightblock
+    flex: 0 0 100%
+    max-width 100%
+    flex-direction row
+  .bd-item
+    flex-direction column
+  .item-statsnum
+    text-align left
+    margin-bottom 0
+    br
+      display none
+  .item-rightblock
+    justify-content space-between
+    padding 20px 30px
+  div .pagination li:first-child a, div .pagination li:last-child a
+    min-width 50px
+  div .pagination li
+    margin 0 5px
+
+@media (min-width: ($MQMobile + 1px))
+  .theme-container.no-sidebar
+    .sidebar
+      display none
+
+    .page
+      padding-left 0
+
+
+

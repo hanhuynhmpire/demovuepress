@@ -1,0 +1,22 @@
+{
+  "scripts": {
+    "docs:dev": "NODE_OPTIONS=\"--max-old-space-size=8192\" vuepress dev docs --no-cache",
+    "docs:build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "@vuepress/plugin-blog": "^1.9.2",
+    "axios": "^0.19.2",
+    "vue-google-adsense": "^1.8.0",
+    "vue-script2": "^2.1.0",
+    "vuepress": "^1.3.0",
+    "@vuepress/plugin-google-analytics": "^1.3.1",
+    "vuepress-plugin-sitemap": "^2.3.1",
+    "vuepress-plugin-custom-popup": "nbtri/vuepress-plugin-custom-popup",
+    "@fortawesome/fontawesome-svg-core": "^1.2.19",
+    "@fortawesome/free-solid-svg-icons": "^5.9.0",
+    "@fortawesome/vue-fontawesome": "^0.1.6"
+  },
+  "dependencies": {
+    "bootstrap": "^4.4.1"
+  }
+}
