@@ -1,8 +1,8 @@
 <template>
-    <div v-if="paginationData.length > 0">
+    <div v-if="pagination.length > 0">
         <div class="stats-download">
             <p class="fs-medium textColorHighlight">
-                <strong>{{paginationData._matchedPages.length}}</strong> results
+                <strong>{{pagination._matchedPages.length}}</strong> results
             </p>
             <div class="download-btns" v-if="level === 3">
                 <a :href="$page.frontmatter.fullFile" target="_blank" class="btn btn-sm btn-primary">DOWNLOAD FULL LIST <i class="bd-icon ic_arrow_down"></i></a>
@@ -11,7 +11,7 @@
         </div>
 
         <div id="default-layout" class="list-pagination">
-            <div v-for="(page, index) in paginationData.pages">
+            <div v-for="(page, index) in pagination.pages">
                 <div class="bd-item" v-if="level === 3">
                     <div class="item-content">
                         <h6 class="textColorPrimary item-title">
@@ -65,7 +65,7 @@
             </div>
         </div>
 
-        <Pagination v-if="paginationData.length > 1"/>
+        <!--<Pagination v-if="pagination.length > 1"/>-->
     </div>
 </template>
 
@@ -80,7 +80,7 @@
             Pagination,
         },
 
-        props: ['level', 'paginationData', 'ads'],
+        props: ['level', 'pagination', 'ads'],
 
         methods: {
             editLinkRouter(link) {
