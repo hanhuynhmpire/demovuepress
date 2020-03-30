@@ -132,7 +132,9 @@
                         console.log(error)
                     })
             }
+        },
 
+        mounted() {
             if (this.$pagination) {
                 this.paginationPage = this.$pagination;
             }
