@@ -50,7 +50,7 @@
                                             :class="{ 'can-hide': $site.themeConfig.logo }"
                                     >{{ $siteTitle }}</span></h1>
                                     <div v-if="level == 3" class="item-date">Updated date: {{ $site.updatedDate }}</div>
-                                    <!--<PaginationPage :level="level" :ads="adsList" :pagination="paginationPage" />-->
+                                    <PaginationPage :level="level" :ads="adsList" :paginationData="paginationPage" />
                                 </div>
                             </template>
                             <template #bottom>
