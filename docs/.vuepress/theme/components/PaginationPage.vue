@@ -94,11 +94,15 @@
                 default: [],
             },
             pagination: {
-                type: Object,
+                type: Array,
                 default: {
                     length: 0
                 },
             }
+        },
+
+        mounted() {
+          console.log(this.pagination)
         },
 
         // props: ['level', 'pagination', 'ads'],
