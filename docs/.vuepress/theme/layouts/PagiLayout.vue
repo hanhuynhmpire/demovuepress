@@ -133,9 +133,6 @@
                     })
             }
 
-        },
-
-        mounted() {
             if (this.$pagination) {
                 this.paginationPage = this.$pagination;
             }
